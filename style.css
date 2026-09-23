@@ -1,0 +1,212 @@
+/* ---------- base ---------- */
+
+:root{
+    --papel:    #eceee8;   /* fundo da página   */
+    --superficie:#f8f8f5;  /* blocos claros     */
+    --tinta:    #262b28;   /* texto principal   */
+    --tinta-2:  #6d746e;   /* texto secundário  */
+    --linha:    #d4d8d0;   /* fios e bordas     */
+    --musgo:    #4a655a;   /* único tom de cor  */
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 32px 20px;
+    background-color: var(--papel);
+    color: var(--tinta);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h2{
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    margin: 0 0 8px;
+}
+
+p{
+    margin: 0 0 12px;
+}
+
+p:last-child{
+    margin-bottom: 0;
+}
+
+/* ---------- estrutura ---------- */
+
+.container{
+    max-width: 1080px;
+    min-height: 620px;
+    margin: 0 auto;
+    border: 1px solid var(--linha);
+    background-color: var(--superficie);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header{
+    padding: 40px 44px 34px;
+    border-bottom: 1px solid var(--linha);
+}
+
+.marca{
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 6px;
+}
+
+.assinatura{
+    color: var(--tinta-2);
+    margin: 0;
+}
+
+.principal{
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+}
+
+/* ---------- aside (fica à esquerda) ---------- */
+
+aside{
+    width: 26%;
+    order: -1;
+    padding: 36px 30px;
+    border-right: 1px solid var(--linha);
+    background-color: var(--papel);
+    color: var(--tinta-2);
+    font-size: 0.92rem;
+}
+
+aside h2{
+    color: var(--tinta);
+    margin-bottom: 14px;
+}
+
+.contato{
+    color: var(--musgo);
+}
+
+.mapa{
+    margin-top: 20px;
+    border: 1px solid var(--linha);
+    line-height: 0;
+}
+
+.mapa iframe{
+    width: 100%;
+    height: 210px;
+    border: 0;
+    display: block;
+    filter: grayscale(35%);
+}
+
+/* ---------- main e suas duas sessões ---------- */
+
+main{
+    width: 74%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sessao_1{
+    flex: 1;
+    gap: 24px;
+    padding: 36px 40px;
+    align-items: stretch;
+}
+
+.sessao_2{
+    padding: 36px 40px;
+    border-top: 1px solid var(--linha);
+    background-color: var(--papel);
+}
+
+.centralizar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section{
+    flex: 1;
+    padding: 22px 20px;
+    border-top: 2px solid var(--musgo);
+    background-color: var(--superficie);
+}
+
+section p{
+    color: var(--tinta-2);
+    font-size: 0.92rem;
+}
+
+.texto{
+    max-width: 62ch;
+}
+
+.texto p{
+    color: var(--tinta-2);
+}
+
+.prazo{
+    color: var(--tinta);
+}
+
+/* ---------- footer ---------- */
+
+footer{
+    padding: 20px 44px;
+    border-top: 1px solid var(--linha);
+    color: var(--tinta-2);
+    font-size: 0.88rem;
+}
+
+/* ---------- telas menores ---------- */
+
+@media (max-width: 760px){
+
+    body{
+        padding: 16px 12px;
+    }
+
+    header{
+        padding: 28px 24px 24px;
+    }
+
+    .principal{
+        flex-direction: column;
+    }
+
+    aside,
+    main{
+        width: 100%;
+    }
+
+    aside{
+        order: 0;
+        border-right: none;
+        border-top: 1px solid var(--linha);
+    }
+
+    .sessao_1{
+        flex-direction: column;
+        gap: 18px;
+        padding: 26px 24px;
+    }
+
+    .sessao_2{
+        padding: 26px 24px;
+    }
+
+    footer{
+        padding: 18px 24px;
+    }
+}
